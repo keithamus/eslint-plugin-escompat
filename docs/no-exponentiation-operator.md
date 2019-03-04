@@ -2,7 +2,7 @@
 
 This prevents use of the ES2017 Expontentiation Operator:
 
-```
+```js
 2 ** 3 === 8
 
 let x = 2
@@ -22,7 +22,7 @@ You can instead safely use `Math.pow(a, b)` where `a` is the left hand operand
 and `b` is the right hand operand. For example the following lines are
 equivalent:
 
-```
+```js
 2 ** 3 === 8
 Math.pow(2, 3) === 8
 
