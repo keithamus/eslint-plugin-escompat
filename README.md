@@ -2,9 +2,9 @@
 
 This plugin will report eslint errors for code which - if left untranspiled - will not work in some browsers.
 
-This is useful if you indent to ship code without first using a transpiler, such as [Babel](https://babeljs.io).
+This is useful if you intend to ship code without first using a transpiler, such as [Babel](https://babeljs.io).
 
-This _wont_ lint for features that can be polyfilled. For that you can use [eslint-plugin-compat][epc].
+This _won't_ lint for features that can be polyfilled. For that you can use [eslint-plugin-compat][epc].
 
 ## Installation
 
