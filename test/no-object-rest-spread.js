@@ -7,6 +7,8 @@ ruleTester.run('no-object-rest-spread', rule, {
   valid: [
     {code:'const x = { a, b, c }'},
     {code:'const { a, b, c } = x'},
+    {code:'const x = [...[1], ...[2]]'},
+    {code:'const [x, ...y] = [1,2,3]'},
   ],
   invalid: [
     {
