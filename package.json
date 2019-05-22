@@ -18,6 +18,7 @@
     "test": "npm run lint && mocha"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
     "eslint": "^5.14.1",
     "mocha": "^6.0.0"
   },
