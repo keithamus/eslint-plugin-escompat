@@ -14,6 +14,7 @@ ruleTester.run('no-numeric-separators', rule, {
   invalid: [
     {
       code: '100_000_000',
+      output: '100000000',
       errors: [
         {
           message:
@@ -23,6 +24,7 @@ ruleTester.run('no-numeric-separators', rule, {
     },
     {
       code: '1_000_000',
+      output: '1000000',
       errors: [
         {
           message:
@@ -32,6 +34,7 @@ ruleTester.run('no-numeric-separators', rule, {
     },
     {
       code: '100_0',
+      output: '1000',
       errors: [
         {
           message:
@@ -41,6 +44,7 @@ ruleTester.run('no-numeric-separators', rule, {
     },
     {
       code: '100_000_000',
+      output: '100000000',
       errors: [
         {
           message:
