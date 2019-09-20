@@ -6,6 +6,7 @@ var ruleTester = new RuleTester({parser: require.resolve('babel-eslint'), parser
 ruleTester.run('no-bind-operator', rule, {
   valid: [
     {code: 'console.log.bind(console)'}, 
+    {code: 'console.log.call(console)'}, 
   ],
   invalid: [
     {
@@ -25,6 +26,24 @@ ruleTester.run('no-bind-operator', rule, {
             'The Bind Operator is not supported in undefined'
         }
       ]
-    }
+    },
+    {
+      code: 'console::log(1)',
+      errors: [
+        {
+          message:
+            'The Bind Operator is not supported in undefined'
+        }
+      ]
+    },
+    {
+      code: '::console.log(1)',
+      errors: [
+        {
+          message:
+            'The Bind Operator is not supported in undefined'
+        }
+      ]
+    },
   ]
 })
