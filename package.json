@@ -7,6 +7,7 @@
     "type": "git",
     "url": "https://github.com/keithamus/eslint-plugin-escompat"
   },
+  "homepage": "https://github.com/keithamus/eslint-plugin-escompat",
   "license": "MIT",
   "author": "Keith Cirkel (https://keithcirkel.co.uk/)",
   "files": [
