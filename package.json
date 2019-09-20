@@ -19,14 +19,14 @@
     "test": "npm run lint && mocha"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.14.1",
-    "mocha": "^6.0.0"
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.4.0",
+    "mocha": "^6.2.0"
   },
   "peerDependencies": {
     "eslint": ">=5.14.1"
   },
   "dependencies": {
-    "browserslist": "^4.4.1"
+    "browserslist": "^4.7.0"
   }
 }

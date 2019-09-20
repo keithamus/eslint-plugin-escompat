@@ -1,7 +1,7 @@
 var rule = require('../lib/rules/no-optional-chaining')
 var RuleTester = require('eslint').RuleTester
 
-var ruleTester = new RuleTester({parser: 'babel-eslint', parserOptions: {ecmaVersion: 2018}})
+var ruleTester = new RuleTester({parser: require.resolve('babel-eslint'), parserOptions: {ecmaVersion: 2018}})
 
 ruleTester.run('no-optional-chaining', rule, {
   valid: [
