@@ -1,4 +1,4 @@
-var rule = require('../lib/rules/no-public-class-fields')
+var rule = require('../lib/rules/no-public-static-class-fields')
 var RuleTester = require('eslint').RuleTester
 
 var ruleTester = new RuleTester({parser: 'babel-eslint', parserOptions: {ecmaVersion: 2018}})
@@ -7,33 +7,18 @@ ruleTester.run('no-public-class-fields', rule, {
   valid: [
     {code: 'class Foo { bar(){} }'}, 
     {code: 'class Foo { static bar() {} }'},
+    // This doesn't catch instance class fields.
     {code: 'class Foo { bar: AType }'},
+    {code: 'class Foo { bar = () => {} }'},
+    {code: 'class Foo { bar = 1 }'},
   ],
   invalid: [
-    {
-      code: 'class Foo { bar = () => {} }',
-      errors: [
-        {
-          message:
-            'Class Fields are not supported in undefined'
-        }
-      ]
-    },
-    {
-      code: 'class Foo { bar = 1 }',
-      errors: [
-        {
-          message:
-          'Class Fields are not supported in undefined'
-        }
-      ]
-    },
     {
       code: 'class Foo { static bar = () => {} }',
       errors: [
         {
           message:
-          'Class Fields are not supported in undefined'
+          'Static Class Fields are not supported in undefined'
         }
       ]
     },
@@ -42,7 +27,7 @@ ruleTester.run('no-public-class-fields', rule, {
       errors: [
         {
           message:
-          'Class Fields are not supported in undefined'
+          'Static Class Fields are not supported in undefined'
         }
       ]
     }
