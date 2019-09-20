@@ -8,6 +8,8 @@ ruleTester.run('no-numeric-separators', rule, {
     {code: '100000000'}, 
     {code: '1.00000000'}, 
     {code: '1e8'}, 
+    {code: '"1_000_000"'}, 
+    {code: '0'}, 
   ],
   invalid: [
     {
