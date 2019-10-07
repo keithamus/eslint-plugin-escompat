@@ -12,6 +12,7 @@ ruleTester.run('no-public-class-fields', rule, {
     {code: 'class Foo { static bar: AType }'},
     {code: 'class Foo { static bar = () => {} }'},
     {code: 'class Foo { static bar = 1 }'},
+    {code: 'class Foo { foo /*: CommentType*/ }'},
   ],
   invalid: [
     {
@@ -25,6 +26,15 @@ ruleTester.run('no-public-class-fields', rule, {
     },
     {
       code: 'class Foo { bar = 1 }',
+      errors: [
+        {
+          message:
+          'Instance Class Fields are not supported in undefined'
+        }
+      ]
+    },
+    {
+      code: 'class Foo { bar = null }',
       errors: [
         {
           message:
