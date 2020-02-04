@@ -8,6 +8,7 @@ ruleTester.run('no-regexp-s-flag', rule, {
     {code: '/foo.bar/'},
     {code: '/foo.bar/g'},
     {code: 'new RegExp("foo.bar")'},
+    {code: 'new RegExp("foo.bar", flags)'},
     {code: 'new RegExp("foo.bar", "u")'},
     {code: 'new RegExp("foo.bar", "g")'},
     {code: 'RegExp("foo.bar", "g")'},
@@ -23,6 +24,14 @@ ruleTester.run('no-regexp-s-flag', rule, {
     },
     {
       code: 'new RegExp("foo.bar", "s")',
+      errors: [
+        {
+          message: 'RegExp "s" flag is not supported in undefined'
+        }
+      ]
+    },
+    {
+      code: 'new RegExp("foo.bar", `s`)',
       errors: [
         {
           message: 'RegExp "s" flag is not supported in undefined'
