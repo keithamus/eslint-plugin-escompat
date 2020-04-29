@@ -22,6 +22,17 @@ Alternatively, you can use the `recommended` configuration which will do this fo
 }
 ```
 
+### TypeScript Users
+
+Aside from the `recommended` config, there is also the `typescript` config which can be used if you're using TypeScript. The TypeScript config only enables some of the rules, avoiding enabling rules for which `typescript` safely transpiles down to a more compatible syntax. To enable the `typescript` config, simply add the following to your eslint config:
+
+```js
+// .eslintrc
+{
+  "extends": ["plugin:escompat/typescript"]
+}
+```
+
 ## Targeting Browsers
 
 `eslint-plugin-escompat` uses the `browserslist` configuration in `package.json`
@@ -55,27 +66,32 @@ See [browserslist/browserslist](https://github.com/browserslist/browserslist) fo
 
 ## Rules
 
- - [no-async-generator](./docs/no-async-generator.md)
- - [no-async-iteration](./docs/no-async-iteration.md)
- - [no-bigint](./docs/no-bigint.md)
- - [no-bind-operator](./docs/no-bind-operator.md)
- - [no-computed-class-fields](./docs/no-computed-class-fields.md)
- - [no-do-expression](./docs/no-do-expression.md)
- - [no-dynamic-import](./docs/no-dynamic-import.md)
- - [no-edge-destructure-bug](./docs/no-edge-destructure-bug.md)
- - [no-exponentiation-operator](./docs/no-exponentiation-operator.md)
- - [no-nullish-coalescing](./docs/no-nullish-coalescing.md)
- - [no-numeric-separators](./docs/no-numeric-separators.md)
- - [no-object-rest-spread](./docs/no-object-rest-spread.md)
- - [no-optional-catch](./docs/no-optional-catch.md)
- - [no-optional-chaining](./docs/no-optional-chaining.md)
- - [no-pipeline-operator](./docs/no-pipeline-operator.md)
- - [no-private-class-fields](./docs/no-private-class-fields.md)
- - [no-public-instance-class-fields](./docs/no-public-instance-class-fields.md)
- - [no-public-static-class-fields](./docs/no-public-static-class-fields.md)
- - [no-regexp-lookbehind](./docs/no-regexp-lookbehind.md)
- - [no-regexp-named-groups](./docs/no-regexp-named-groups.md)
- - [no-regexp-s-flag](./docs/no-regexp-s-flag.md)
+ - [no-async-generator](./docs/no-async-generator.md) ✔️ 
+ - [no-async-iteration](./docs/no-async-iteration.md) ✔️ 
+ - [no-bigint](./docs/no-bigint.md) ✔️ 🔹
+ - [no-bind-operator](./docs/no-bind-operator.md) ✔️ 🔹
+ - [no-computed-class-fields](./docs/no-computed-class-fields.md) ✔️ 🔹
+ - [no-do-expression](./docs/no-do-expression.md) ✔️ 🔹
+ - [no-dynamic-import](./docs/no-dynamic-import.md) ✔️ 🔹
+ - [no-edge-destructure-bug](./docs/no-edge-destructure-bug.md) ✔️ 🔹
+ - [no-exponentiation-operator](./docs/no-exponentiation-operator.md) ✔️ 
+ - [no-nullish-coalescing](./docs/no-nullish-coalescing.md) ✔️
+ - [no-numeric-separators](./docs/no-numeric-separators.md) ✔️
+ - [no-object-rest-spread](./docs/no-object-rest-spread.md) ✔️
+ - [no-optional-catch](./docs/no-optional-catch.md) ✔️
+ - [no-optional-chaining](./docs/no-optional-chaining.md) ✔️
+ - [no-pipeline-operator](./docs/no-pipeline-operator.md) ✔️ 🔹
+ - [no-private-class-fields](./docs/no-private-class-fields.md) ✔️
+ - [no-public-instance-class-fields](./docs/no-public-instance-class-fields.md) ✔️
+ - [no-public-static-class-fields](./docs/no-public-static-class-fields.md) ✔️
+ - [no-regexp-lookbehind](./docs/no-regexp-lookbehind.md) ✔️ 🔹
+ - [no-regexp-named-groups](./docs/no-regexp-named-groups.md) ✔️ 🔹
+ - [no-regexp-s-flag](./docs/no-regexp-s-flag.md) ✔️ 🔹
+
+#### Key:
+
+✔️ = enabled in `plugin:escompat/recommended` config.
+🔹 = enabled in `plugin:escompat/typescript` config.
 
 ## Inspiration
 This project was largely inspired by the great [eslint-plugin-compat][epc] library.
