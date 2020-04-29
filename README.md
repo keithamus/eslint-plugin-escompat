@@ -57,11 +57,25 @@ See [browserslist/browserslist](https://github.com/browserslist/browserslist) fo
 
  - [no-async-generator](./docs/no-async-generator.md)
  - [no-async-iteration](./docs/no-async-iteration.md)
+ - [no-bigint](./docs/no-bigint.md)
+ - [no-bind-operator](./docs/no-bind-operator.md)
+ - [no-computed-class-fields](./docs/no-computed-class-fields.md)
+ - [no-do-expression](./docs/no-do-expression.md)
+ - [no-dynamic-import](./docs/no-dynamic-import.md)
  - [no-edge-destructure-bug](./docs/no-edge-destructure-bug.md)
  - [no-exponentiation-operator](./docs/no-exponentiation-operator.md)
+ - [no-nullish-coalescing](./docs/no-nullish-coalescing.md)
+ - [no-numeric-separators](./docs/no-numeric-separators.md)
  - [no-object-rest-spread](./docs/no-object-rest-spread.md)
+ - [no-optional-catch](./docs/no-optional-catch.md)
+ - [no-optional-chaining](./docs/no-optional-chaining.md)
+ - [no-pipeline-operator](./docs/no-pipeline-operator.md)
+ - [no-private-class-fields](./docs/no-private-class-fields.md)
+ - [no-public-instance-class-fields](./docs/no-public-instance-class-fields.md)
+ - [no-public-static-class-fields](./docs/no-public-static-class-fields.md)
+ - [no-regexp-lookbehind](./docs/no-regexp-lookbehind.md)
+ - [no-regexp-named-groups](./docs/no-regexp-named-groups.md)
  - [no-regexp-s-flag](./docs/no-regexp-s-flag.md)
-
 
 ## Inspiration
 This project was largely inspired by the great [eslint-plugin-compat][epc] library.
