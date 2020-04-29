@@ -1,4 +1,4 @@
-# no-regexp-named-groups
+# no-regexp-named-group
 
 This prevents the use of the RegExp named groups feature
 
