@@ -8,10 +8,10 @@ const baz = obj?.foo?.bar?.baz; // 42
 
 These will not be allowed because they are not supported in the following browsers:
 
- - Edge (any version at the time of writing)
- - Safari (any version at the time of writing)
- - Firefox (any version at the time of writing)
- - Chrome (any version at the time of writing)
+ - Edge < 80
+ - Safari < 13.1
+ - Firefox < 72
+ - Chrome < 80
 
 ## What is the Fix?
 
