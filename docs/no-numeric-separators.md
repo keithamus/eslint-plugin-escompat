@@ -8,7 +8,7 @@ This prevents the use of separators in Numeric Literals:
 
 These will not be allowed because they are not supported in the following browsers:
 
- - Edge (any version at the time of writing)
+ - Edge < 79
  - Safari < 13
  - Firefox < 68
  - Chrome < 75

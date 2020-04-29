@@ -10,7 +10,7 @@ let other = { a: 1, ...x }
 
 These will not be allowed because they are not supported in the following browsers:
 
- - Edge (any version at the time of writing)
+ - Edge < 79
  - Safari < 11.1
  - Firefox < 55
  - Chrome < 60

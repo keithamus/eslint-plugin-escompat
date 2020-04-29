@@ -8,7 +8,7 @@ import('foo').then(...)
 
 These will not be allowed because they are not supported in the following browsers:
 
- - Edge (any version at the time of writing)
+ - Edge < 79
  - Safari < 11
  - Firefox < 67
  - Chrome < 63

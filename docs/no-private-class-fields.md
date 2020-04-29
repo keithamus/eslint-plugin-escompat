@@ -15,7 +15,7 @@ class Foo {
 
 These will not be allowed because they are not supported in the following browsers:
 
- - Edge (any version at the time of writing)
+ - Edge < 79
  - Safari (any version at the time of writing)
  - Firefox (any version at the time of writing)
  - Chrome < 74

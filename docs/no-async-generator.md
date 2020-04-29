@@ -18,7 +18,7 @@ async function* readLines(path) {
 
 These will not be allowed because they are not supported in the following browsers:
 
- - Edge (any version at the time of writing)
+ - Edge < 79
  - Safari < 12
  - Firefox < 57
  - Chrome < 63
