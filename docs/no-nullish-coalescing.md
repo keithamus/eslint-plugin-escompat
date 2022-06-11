@@ -4,7 +4,7 @@ This prevents the use of the Nullish Coalescing Operator:
 
 ```js
 let foo = null
-const baz = foo || 1
+const baz = foo ?? 1
 ```
 
 These will not be allowed because they are not supported in the following browsers:
