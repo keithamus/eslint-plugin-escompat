@@ -1,14 +1,13 @@
 var rule = require('../lib/rules/no-public-static-class-fields')
 var RuleTester = require('eslint').RuleTester
 
-var ruleTester = new RuleTester({parser: require.resolve('babel-eslint'), parserOptions: {ecmaVersion: 2018}})
+var ruleTesterBabel = new RuleTester({parser: require.resolve('@babel/eslint-parser')})
+var ruleTester = new RuleTester({parserOptions: {ecmaVersion: 2022}})
 
-ruleTester.run('no-public-class-fields', rule, {
+const tests = {
   valid: [
     {code: 'class Foo { bar(){} }'}, 
     {code: 'class Foo { static bar() {} }'},
-    // This doesn't catch instance class fields.
-    {code: 'class Foo { bar: AType }'},
     {code: 'class Foo { bar = () => {} }'},
     {code: 'class Foo { bar = 1 }'},
   ],
@@ -31,5 +30,18 @@ ruleTester.run('no-public-class-fields', rule, {
         }
       ]
     }
+  ]
+}
+
+ruleTester.run('no-public-static-class-fields', rule, tests)
+ruleTesterBabel.run('no-public-static-class-fields', rule, {
+  valid: [
+    ...tests.valid,
+    // This doesn't catch instance class fields.
+    // TODO: fixme
+    // {code: 'class Foo { bar: AType }'},
+  ],
+  invalid: [
+    ...tests.invalid
   ]
 })

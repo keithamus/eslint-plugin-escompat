@@ -1,7 +1,7 @@
 var rule = require('../lib/rules/no-nullish-coalescing')
 var RuleTester = require('eslint').RuleTester
 
-var ruleTester = new RuleTester({ parser: require.resolve('babel-eslint') })
+var ruleTester = new RuleTester({parserOptions: {ecmaVersion: 2020}})
 
 ruleTester.run('no-nullish-coalescing', rule, {
   valid: [

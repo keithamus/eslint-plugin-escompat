@@ -1,9 +1,10 @@
 var rule = require('../lib/rules/no-optional-catch')
 var RuleTester = require('eslint').RuleTester
 
-var ruleTester = new RuleTester({parser: require.resolve('babel-eslint'), parserOptions: {ecmaVersion: 2018}})
+var ruleTesterBabel = new RuleTester({parser: require.resolve('@babel/eslint-parser')})
+var ruleTester = new RuleTester({parserOptions: {ecmaVersion: 2019}})
 
-ruleTester.run('no-optional-catch', rule, {
+const tests = {
   valid: [
     {code: 'try { foo() } catch (error) {}'},
     {code: 'try { foo() } catch (e) {}'},
@@ -20,4 +21,7 @@ ruleTester.run('no-optional-catch', rule, {
       ]
     }
   ]
-})
+}
+
+ruleTester.run('no-optional-catch', rule, tests)
+ruleTesterBabel.run('no-optional-catch (babel)', rule, tests)

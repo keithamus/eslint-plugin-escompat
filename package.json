@@ -19,7 +19,12 @@
     "test": "npm run lint && mocha"
   },
   "devDependencies": {
-    "babel-eslint": "^10.1.0",
+    "@babel/eslint-parser": "^7.18.2",
+    "@babel/plugin-proposal-do-expressions": "^7.16.7",
+    "@babel/plugin-proposal-function-bind": "^7.16.7",
+    "@babel/plugin-proposal-pipeline-operator": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-typescript": "^7.17.12",
     "eslint": "^8.18.0",
     "mocha": "^10.0.0"
   },

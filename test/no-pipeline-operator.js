@@ -1,7 +1,7 @@
 var rule = require('../lib/rules/no-pipeline-operator')
 var RuleTester = require('eslint').RuleTester
 
-var ruleTester = new RuleTester({parser: require.resolve('babel-eslint'), parserOptions: {ecmaVersion: 2018}})
+var ruleTester = new RuleTester({parser: require.resolve('@babel/eslint-parser')})
 
 ruleTester.run('no-pipeline-operator', rule, {
   valid: [
@@ -9,7 +9,7 @@ ruleTester.run('no-pipeline-operator', rule, {
   ],
   invalid: [
     {
-      code: 'foo |> bar',
+      code: 'foo |> bar(^^)',
       errors: [
         {
           message:

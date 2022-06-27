@@ -1,0 +1,11 @@
+{
+  "presets": [
+    "@babel/env",
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-do-expressions",
+    "@babel/plugin-proposal-function-bind",
+    [ "@babel/plugin-proposal-pipeline-operator", { "proposal": "hack", "topicToken": "^^" }]
+  ]
+}

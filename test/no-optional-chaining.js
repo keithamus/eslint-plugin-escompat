@@ -1,9 +1,10 @@
 var rule = require('../lib/rules/no-optional-chaining')
 var RuleTester = require('eslint').RuleTester
 
-var ruleTester = new RuleTester({parser: require.resolve('babel-eslint'), parserOptions: {ecmaVersion: 2018}})
+var ruleTesterBabel = new RuleTester({parser: require.resolve('@babel/eslint-parser')})
+var ruleTester = new RuleTester({parserOptions: {ecmaVersion: 2020}})
 
-ruleTester.run('no-optional-chaining', rule, {
+const tests = {
   valid: [
     {code: '(foo||{}).bar'}, 
   ],
@@ -18,4 +19,7 @@ ruleTester.run('no-optional-chaining', rule, {
       ]
     }
   ]
-})
+}
+
+ruleTester.run('no-optional-chaining', rule, tests)
+ruleTesterBabel.run('no-optional-chaining (babel)', rule, tests)

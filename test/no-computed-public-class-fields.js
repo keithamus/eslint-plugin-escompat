@@ -1,19 +1,17 @@
 var rule = require('../lib/rules/no-computed-public-class-fields')
 var RuleTester = require('eslint').RuleTester
 
-var ruleTester = new RuleTester({parser: require.resolve('babel-eslint'), parserOptions: {ecmaVersion: 2018}})
+var ruleTesterBabel = new RuleTester({parser: require.resolve('@babel/eslint-parser')})
+var ruleTester = new RuleTester({parserOptions: {ecmaVersion: 2022}})
 
-ruleTester.run('no-public-class-fields', rule, {
+const tests = {
   valid: [
     {code: 'class Foo { bar(){} }'}, 
     {code: 'class Foo { static bar() {} }'},
-    {code: 'class Foo { bar: AType }'},
     {code: 'class Foo { ["bar"]() {} }'},
     {code: 'class Foo { static ["bar"]() {} }'},
-    {code: 'class Foo { static bar: AType }'},
     {code: 'class Foo { static bar = () => {} }'},
     {code: 'class Foo { static bar = 1 }'},
-    {code: 'class Foo { bar: AType }'},
     {code: 'class Foo { bar = () => {} }'},
     {code: 'class Foo { bar = 1 }'},
   ],
@@ -55,4 +53,7 @@ ruleTester.run('no-public-class-fields', rule, {
       ]
     }
   ]
-})
+}
+
+ruleTester.run('no-computed-public-class-fields', rule, tests)
+ruleTesterBabel.run('no-computed-public-class-fields (babel)', rule, tests)

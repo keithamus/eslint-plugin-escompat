@@ -1,9 +1,10 @@
 var rule = require('../lib/rules/no-numeric-separators')
 var RuleTester = require('eslint').RuleTester
 
-var ruleTester = new RuleTester({parser: require.resolve('babel-eslint'), parserOptions: {ecmaVersion: 2018}})
+var ruleTesterBabel = new RuleTester({ parser: require.resolve('@babel/eslint-parser') })
+var ruleTester = new RuleTester({parserOptions: {sourceType: 'module', ecmaVersion: 2021}})
 
-ruleTester.run('no-numeric-separators', rule, {
+const tests = {
   valid: [
     {code: '100000000'}, 
     {code: '1.00000000'}, 
@@ -53,4 +54,7 @@ ruleTester.run('no-numeric-separators', rule, {
       ]
     }
   ]
-})
+}
+
+ruleTester.run('no-numeric-separators (babel)', rule, tests)
+ruleTesterBabel.run('no-numeric-separators (babel)', rule, tests)

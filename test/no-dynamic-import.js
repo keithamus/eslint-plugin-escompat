@@ -1,10 +1,10 @@
 var rule = require('../lib/rules/no-dynamic-imports')
 var RuleTester = require('eslint').RuleTester
 
-var ruleTesterBabel = new RuleTester({ parser: require.resolve('babel-eslint') })
+var ruleTesterBabel = new RuleTester({ parser: require.resolve('@babel/eslint-parser') })
 var ruleTester = new RuleTester({parserOptions: {sourceType: 'module', ecmaVersion: 2020}})
 
-ruleTester.run('no-dynamic-imports', rule, {
+const tests = {
   valid: [
     {code: 'import foo from "foo"'}, 
     {code: 'Import("foo").then'}, 
@@ -21,7 +21,7 @@ ruleTester.run('no-dynamic-imports', rule, {
       ]
     }
   ]
-})
+}
 
 ruleTesterBabel.run('no-dynamic-imports (babel)', rule, {
   valid: [
@@ -41,3 +41,6 @@ ruleTesterBabel.run('no-dynamic-imports (babel)', rule, {
     }
   ]
 })
+
+ruleTester.run('no-dynamic-imports', rule, tests)
+ruleTesterBabel.run('no-dynamic-imports', rule, tests)
