@@ -70,9 +70,9 @@ See [browserslist/browserslist](https://github.com/browserslist/browserslist) fo
  - [no-async-iteration](./docs/no-async-iteration.md)
  - [no-bigint](./docs/no-bigint.md)
  - [no-bind-operator](./docs/no-bind-operator.md)
- - [no-computed-class-fields](./docs/no-computed-class-fields.md)
+ - [no-computed-public-class-fields](./docs/no-computed-public-class-fields.md)
  - [no-do-expression](./docs/no-do-expression.md)
- - [no-dynamic-import](./docs/no-dynamic-import.md)
+ - [no-dynamic-imports](./docs/no-dynamic-imports.md)
  - [no-edge-destructure-bug](./docs/no-edge-destructure-bug.md)
  - [no-exponentiation-operator](./docs/no-exponentiation-operator.md)
  - [no-nullish-coalescing](./docs/no-nullish-coalescing.md)
@@ -85,7 +85,7 @@ See [browserslist/browserslist](https://github.com/browserslist/browserslist) fo
  - [no-public-instance-class-fields](./docs/no-public-instance-class-fields.md)
  - [no-public-static-class-fields](./docs/no-public-static-class-fields.md)
  - [no-regexp-lookbehind](./docs/no-regexp-lookbehind.md)
- - [no-regexp-named-groups](./docs/no-regexp-named-groups.md)
+ - [no-regexp-named-group](./docs/no-regexp-named-group.md)
  - [no-regexp-s-flag](./docs/no-regexp-s-flag.md)
 
 ## Inspiration

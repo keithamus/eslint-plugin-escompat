@@ -1,4 +1,4 @@
-# Edge 15-17 Destructuring Bug
+# no-edge-destructure-bug
 
 There's an interesting bug within Edge 15-17 where if you use _object destructuring_ with _default assignments_ _only_ on the _second_ argument of an _arrow function_, then you'll get a SyntaxError. In other words:
 

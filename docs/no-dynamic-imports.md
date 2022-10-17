@@ -1,4 +1,4 @@
-# no-dynamic-import
+# no-dynamic-imports
 
 This prevents the use of Dynamic Imports.
 

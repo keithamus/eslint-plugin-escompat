@@ -1,6 +1,6 @@
 module.exports = {
   parserOptions: {
-    ecmaVersion: 6
+    ecmaVersion: 2022
   },
   env: {
     es6: true,

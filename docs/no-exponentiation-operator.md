@@ -1,4 +1,4 @@
-# No Exponentiation Operator
+# no-exponentiation-operator
 
 This prevents use of the ES2017 Expontentiation Operator:
 

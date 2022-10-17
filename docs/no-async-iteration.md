@@ -15,4 +15,6 @@ These will not be allowed because they are not supported in the following browse
  - Firefox < 57
  - Chrome < 63
 
+## What is the Fix?
+
 This can be safely disabled if you intend to compile code with the `@babel/plugin-proposal-async-generator-functions` Babel plugin

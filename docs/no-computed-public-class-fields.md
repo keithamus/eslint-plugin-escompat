@@ -1,4 +1,4 @@
-# no-computed-class-fields
+# no-computed-public-class-fields
 
 This prevents the use of computed properties as Class Fields
 
