@@ -35,7 +35,7 @@ If you're using the bind operator as a call expression, then you can use the `.c
 ```js
 // these are equivalent:
 obj::func(val)
-func.call(obj, vall)
+func.call(obj, val)
 
 // these are equivalent:
 ::obj.func(val)

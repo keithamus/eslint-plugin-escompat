@@ -17,4 +17,4 @@ These will not be allowed because they are not supported in the following browse
 
 ## What is the Fix?
 
-You may be able to rewrite your experession using (Negative) Lookaheads, but if not then there is no solution for this, aside from pulling in a custom RegExp library.
+You may be able to rewrite your expression using (Negative) Lookaheads, but if not then there is no solution for this, aside from pulling in a custom RegExp library.

@@ -48,7 +48,7 @@ that matches your `tsconfig.json` `target` value.
 
 `eslint-plugin-escompat` uses the `browserslist` configuration in `package.json`
 
-If you have a browserlist, is is safe to enable all of these rules - as any that
+If you have a browserslist, is is safe to enable all of these rules - as any that
 do not coincide with your chosen browsers will be turned off automatically.
 
 See [browserslist/browserslist](https://github.com/browserslist/browserslist)
