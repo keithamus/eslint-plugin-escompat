@@ -1,6 +1,6 @@
 # no-exponentiation-operator
 
-This prevents use of the ES2017 Expontentiation Operator:
+This prevents use of the ES2017 Exponentiation Operator:
 
 ```js
 2 ** 3 === 8
