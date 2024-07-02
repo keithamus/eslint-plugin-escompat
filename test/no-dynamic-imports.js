@@ -1,14 +1,17 @@
-var rule = require('../lib/rules/no-dynamic-imports')
-var RuleTester = require('eslint').RuleTester
+'use strict';
 
-var ruleTesterBabel = new RuleTester({ parser: require.resolve('@babel/eslint-parser') })
-var ruleTester = new RuleTester({parserOptions: {sourceType: 'module', ecmaVersion: 2020}})
+var rule = require('../lib/index').rules['no-dynamic-imports']
+var RuleTester = require('eslint').RuleTester
+var babelEslintParser = require('@babel/eslint-parser');
+
+var ruleTesterBabel = new RuleTester({ languageOptions: {parser: babelEslintParser} })
+var ruleTester = new RuleTester({languageOptions: {sourceType: 'module', ecmaVersion: 2020}})
 
 const tests = {
   valid: [
-    {code: 'import foo from "foo"'}, 
-    {code: 'Import("foo").then'}, 
-    {code: 'System.import("foo").then'}, 
+    {code: 'import foo from "foo"'},
+    {code: 'Import("foo").then'},
+    {code: 'System.import("foo").then'},
   ],
   invalid: [
     {
@@ -25,9 +28,9 @@ const tests = {
 
 ruleTesterBabel.run('no-dynamic-imports (babel)', rule, {
   valid: [
-    {code: 'import foo from "foo"'}, 
-    {code: 'Import("foo").then'}, 
-    {code: 'System.import("foo").then'}, 
+    {code: 'import foo from "foo"'},
+    {code: 'Import("foo").then'},
+    {code: 'System.import("foo").then'},
   ],
   invalid: [
     {

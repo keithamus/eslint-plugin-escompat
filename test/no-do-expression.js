@@ -1,11 +1,14 @@
-var rule = require('../lib/rules/no-do-expression')
-var RuleTester = require('eslint').RuleTester
+'use strict';
 
-var ruleTester = new RuleTester({parser: require.resolve('@babel/eslint-parser'), parserOptions: {ecmaVersion: 2018}})
+var rule = require('../lib/index').rules['no-do-expression']
+var RuleTester = require('eslint').RuleTester
+var babelEslintParser = require('@babel/eslint-parser');
+
+var ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2018, parser: babelEslintParser}})
 
 ruleTester.run('no-do-expression', rule, {
   valid: [
-    {code: '() => { return 1 > 0 }'}, 
+    {code: '() => { return 1 > 0 }'},
   ],
   invalid: [
     {

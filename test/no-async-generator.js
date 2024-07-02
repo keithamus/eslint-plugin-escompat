@@ -1,12 +1,14 @@
-var rule = require('../lib/rules/no-async-generator')
+'use strict';
+
+var rule = require('../lib/index').rules['no-async-generator']
 var RuleTester = require('eslint').RuleTester
 
-var ruleTester = new RuleTester({parserOptions: {ecmaVersion: 2018}})
+var ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2018}})
 
 ruleTester.run('no-async-generator', rule, {
   valid: [
-    {code: 'function*generator(){yield 42;}'}, 
-    {code: 'async function generator(){await 42;}'}, 
+    {code: 'function*generator(){yield 42;}'},
+    {code: 'async function generator(){await 42;}'},
   ],
   invalid: [
     {

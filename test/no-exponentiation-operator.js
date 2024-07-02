@@ -1,7 +1,9 @@
-var rule = require('../lib/rules/no-exponentiation-operator')
+'use strict';
+
+var rule = require('../lib/index').rules['no-exponentiation-operator']
 var RuleTester = require('eslint').RuleTester
 
-var ruleTester = new RuleTester({parserOptions: {ecmaVersion: 2018}})
+var ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2018}})
 
 ruleTester.run('no-exponentiation-operator', rule, {
   valid: [

@@ -1,7 +1,9 @@
-var rule = require('../lib/rules/no-regexp-named-group')
+'use strict';
+
+var rule = require('../lib/index').rules['no-regexp-named-group']
 var RuleTester = require('eslint').RuleTester
 
-var ruleTester = new RuleTester({parserOptions: {ecmaVersion: 2020}})
+var ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2020}})
 
 ruleTester.run('no-regexp-named-group', rule, {
   valid: [

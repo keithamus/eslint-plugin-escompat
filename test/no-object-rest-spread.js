@@ -1,7 +1,9 @@
-var rule = require('../lib/rules/no-object-rest-spread')
+'use strict';
+
+var rule = require('../lib/index').rules['no-object-rest-spread']
 var RuleTester = require('eslint').RuleTester
 
-var ruleTester = new RuleTester({parserOptions: {ecmaVersion: 2019}})
+var ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2019}})
 
 ruleTester.run('no-object-rest-spread', rule, {
   valid: [

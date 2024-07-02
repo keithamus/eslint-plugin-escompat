@@ -1,11 +1,14 @@
-var rule = require('../lib/rules/no-pipeline-operator')
-var RuleTester = require('eslint').RuleTester
+'use strict';
 
-var ruleTester = new RuleTester({parser: require.resolve('@babel/eslint-parser')})
+var rule = require('../lib/index').rules['no-pipeline-operator']
+var RuleTester = require('eslint').RuleTester
+var babelEslintParser = require('@babel/eslint-parser');
+
+var ruleTester = new RuleTester({languageOptions: {parser: babelEslintParser}})
 
 ruleTester.run('no-pipeline-operator', rule, {
   valid: [
-    {code: 'bar(foo)'}, 
+    {code: 'bar(foo)'},
   ],
   invalid: [
     {

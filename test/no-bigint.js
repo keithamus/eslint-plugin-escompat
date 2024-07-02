@@ -1,7 +1,9 @@
-var rule = require('../lib/rules/no-bigint')
+'use strict';
+
+var rule = require('../lib/index').rules['no-bigint']
 var RuleTester = require('eslint').RuleTester
 
-var ruleTester = new RuleTester({parserOptions: {ecmaVersion: 2020}})
+var ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2020}})
 
 ruleTester.run('no-bigint', rule, {
   valid: [
