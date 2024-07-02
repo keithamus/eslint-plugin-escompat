@@ -1,12 +1,15 @@
-var rule = require('../lib/rules/no-public-static-class-fields')
-var RuleTester = require('eslint').RuleTester
+'use strict';
 
-var ruleTesterBabel = new RuleTester({parser: require.resolve('@babel/eslint-parser')})
-var ruleTester = new RuleTester({parserOptions: {ecmaVersion: 2022}})
+const rule = require('../lib/index').rules['no-public-static-class-fields']
+const RuleTester = require('eslint').RuleTester
+const babelEslintParser = require('@babel/eslint-parser');
+
+const ruleTesterBabel = new RuleTester({languageOptions: {parser: babelEslintParser}})
+const ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2022}})
 
 const tests = {
   valid: [
-    {code: 'class Foo { bar(){} }'}, 
+    {code: 'class Foo { bar(){} }'},
     {code: 'class Foo { static bar() {} }'},
     {code: 'class Foo { bar = () => {} }'},
     {code: 'class Foo { bar = 1 }'},
