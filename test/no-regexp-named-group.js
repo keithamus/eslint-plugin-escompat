@@ -1,9 +1,9 @@
 'use strict';
 
-var rule = require('../lib/index').rules['no-regexp-named-group']
-var RuleTester = require('eslint').RuleTester
+const rule = require('../lib/index').rules['no-regexp-named-group']
+const RuleTester = require('eslint').RuleTester
 
-var ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2020}})
+const ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2020}})
 
 ruleTester.run('no-regexp-named-group', rule, {
   valid: [

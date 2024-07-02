@@ -1,9 +1,9 @@
 'use strict';
 
-var rule = require('../lib/index').rules['no-regexp-s-flag']
-var RuleTester = require('eslint').RuleTester
+const rule = require('../lib/index').rules['no-regexp-s-flag']
+const RuleTester = require('eslint').RuleTester
 
-var ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2018}})
+const ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2018}})
 
 ruleTester.run('no-regexp-s-flag', rule, {
   valid: [

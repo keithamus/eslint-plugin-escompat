@@ -1,11 +1,11 @@
 'use strict';
 
-var rule = require('../lib/index').rules['no-dynamic-imports']
-var RuleTester = require('eslint').RuleTester
-var babelEslintParser = require('@babel/eslint-parser');
+const rule = require('../lib/index').rules['no-dynamic-imports']
+const RuleTester = require('eslint').RuleTester
+const babelEslintParser = require('@babel/eslint-parser');
 
-var ruleTesterBabel = new RuleTester({ languageOptions: {parser: babelEslintParser} })
-var ruleTester = new RuleTester({languageOptions: {sourceType: 'module', ecmaVersion: 2020}})
+const ruleTesterBabel = new RuleTester({ languageOptions: {parser: babelEslintParser} })
+const ruleTester = new RuleTester({languageOptions: {sourceType: 'module', ecmaVersion: 2020}})
 
 const tests = {
   valid: [

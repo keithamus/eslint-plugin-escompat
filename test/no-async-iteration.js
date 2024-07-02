@@ -1,9 +1,9 @@
 'use strict';
 
-var rule = require('../lib/index').rules['no-async-iteration']
-var RuleTester = require('eslint').RuleTester
+const rule = require('../lib/index').rules['no-async-iteration']
+const RuleTester = require('eslint').RuleTester
 
-var ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2018}})
+const ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2018}})
 
 ruleTester.run('no-async-iteration', rule, {
   valid: [

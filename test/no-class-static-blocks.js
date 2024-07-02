@@ -1,9 +1,9 @@
 'use strict';
 
-var rule = require("../lib/index").rules["no-class-static-blocks"];
-var RuleTester = require("eslint").RuleTester;
+const rule = require("../lib/index").rules["no-class-static-blocks"];
+const RuleTester = require("eslint").RuleTester;
 
-var ruleTester = new RuleTester({ languageOptions: { ecmaVersion: 2022 }});
+const ruleTester = new RuleTester({ languageOptions: { ecmaVersion: 2022 }});
 
 ruleTester.run("no-class-static-blocks", rule, {
   valid: [{ code: "class Foo { static x = 1 }" }],

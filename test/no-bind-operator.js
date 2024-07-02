@@ -1,10 +1,10 @@
 'use strict';
 
-var rule = require('../lib/index').rules['no-bind-operator']
-var RuleTester = require('eslint').RuleTester
-var babelEslintParser = require('@babel/eslint-parser');
+const rule = require('../lib/index').rules['no-bind-operator']
+const RuleTester = require('eslint').RuleTester
+const babelEslintParser = require('@babel/eslint-parser');
 
-var ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2018, parser: babelEslintParser}})
+const ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2018, parser: babelEslintParser}})
 
 ruleTester.run('no-bind-operator', rule, {
   valid: [
