@@ -15,6 +15,51 @@ This _won't_ lint for features that can be polyfilled. For that you can use
 npm install --save-dev eslint-plugin-escompat
 ```
 
+## Usage for Flat Configs (eslint.config.js) - ESLint >= 8
+
+```js
+// eslint.config.js
+
+import globals from 'globals';
+import escompat from 'eslint-plugin-escompat';
+
+export default [
+    {
+        plugins: {
+            escompat
+        },
+        languageOptions: {
+            globals: globals.browser
+        },
+        rules: {
+            // Configure the individual `"escompat/*"` rules, e.g.:
+            'escompat/no-async-generator': ['error'],
+            'escompat/no-numeric-separators': ['error']
+        }
+    }
+];
+```
+
+Alternatively, you can use the `recommended` configuration which will do the
+plugins for you, with all recommended `"escompat/*"` rules reporting errors.
+
+```js
+import globals from 'globals';
+import escompat from 'eslint-plugin-escompat';
+
+export default [
+    {
+        languageOptions: {
+            globals: globals.browser
+        }
+    },
+    escompat.configs['flat/recommended']
+];
+```
+
+
+## Usage for .eslintrc configs - ESLint < 9
+
 Add `"escompat"` to `.eslintrc` `"plugins"` section, add `"browser": true` to
 `"env"`, then configure the individual `"escompat/*"` rules.
 
@@ -37,8 +82,28 @@ only enable some of the rules, avoiding enabling rules for which `typescript`
 safely transpiles down to a more compatible syntax. Extend the typescript config
 that matches your `tsconfig.json` `target` value.
 
+For flat configs:
+
 ```js
-// .eslintrc
+import globals from 'globals';
+import escompat from 'eslint-plugin-escompat';
+
+export default [
+    {
+        languageOptions: {
+            globals: globals.browser
+        }
+    },
+
+    // The TypeScript configs are in array form, so we need to
+    //   spread them out here
+    ...escompat.configs['flat/typescript-2016']
+];
+```
+
+or for `.eslintrc`:
+
+```js
 {
   "extends": ["plugin:escompat/typescript-2016"]
 }
