@@ -9,7 +9,7 @@ This prevents the use of BigInt numeric literals.
 These will not be allowed because they are not supported in the following browsers:
 
  - Edge < 79
- - Safari (any version at the time of writing)
+ - Safari < 14
  - Firefox < 68
  - Chrome < 67
 

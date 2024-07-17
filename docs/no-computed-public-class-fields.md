@@ -38,4 +38,4 @@ Object.defineProperty(Foo, computed, { configurable: true, enumerable: true, wri
 Foo[computed] = 1
 ```
 
-This can be safely disabled if you intend to compile code with the `@babel/plugin-proposal-class-properties` Babel plugin.
+This can be safely disabled if you intend to compile code with the `@babel/plugin-transform-class-properties` Babel plugin.

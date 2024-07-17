@@ -12,7 +12,7 @@ These will not be allowed because they are not supported in the following browse
 
  - Edge < 79
  - Safari < 11.1
- - Firefox (any version at the time of writing)
+ - Firefox < 78
  - Chrome < 62
 
 

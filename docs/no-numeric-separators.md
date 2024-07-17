@@ -16,4 +16,5 @@ These will not be allowed because they are not supported in the following browse
 
 ## What is the Fix?
 
-This can be safely disabled if you intend to compile code with the `@babel/plugin-proposal-numeric-separator` Babel plugin.
+This can be safely disabled if you intend to compile code with the `@babel/plugin-transform-numeric-separator` Babel plugin, or
+`@babel/preset-env`.
