@@ -99,7 +99,7 @@ describe('documentation', () => {
       let consume = true
       const headings = contents.filter(line => {
         // Discard lines that aren't headers or thumbs
-        if (!(line.startsWith('#') || line.startsWith('\ud83d'))) return false
+        if (!(line.startsWith('#') || line.startsWith('\ud83d')) || line.startsWith('#!')) return false
         // Ignore all sub headings/thumbs between `### Options` and `## When Not To Use It`
         if (line === '### Options') {
           consume = false
