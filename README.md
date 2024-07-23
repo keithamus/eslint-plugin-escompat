@@ -153,6 +153,7 @@ for configuration. Here's some examples:
 - [no-dynamic-imports](./docs/no-dynamic-imports.md)
 - [no-edge-destructure-bug](./docs/no-edge-destructure-bug.md)
 - [no-exponentiation-operator](./docs/no-exponentiation-operator.md)
+- [no-logical-assignment-operator](./docs/no-logical-assignment-operator.md)
 - [no-nullish-coalescing](./docs/no-nullish-coalescing.md)
 - [no-numeric-separators](./docs/no-numeric-separators.md)
 - [no-object-rest-spread](./docs/no-object-rest-spread.md)
