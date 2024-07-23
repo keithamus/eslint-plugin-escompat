@@ -35,4 +35,5 @@ Lastly, you could consider using a utility function such as [lodash' `get`](http
 const baz = _.get(obj, 'foo.bar.baz')
 ```
 
-This can be safely disabled if you intend to compile code with the `@babel/plugin-proposal-optional-chaining` Babel plugin.
+This can be safely disabled if you intend to compile code with the `@babel/plugin-transform-optional-chaining` Babel plugin, or
+`@babel/preset-env`.

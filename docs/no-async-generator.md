@@ -28,4 +28,4 @@ These will not be allowed because they are not supported in the following browse
 
 You can safely manually create generator functions that yield promises, however an example is out of scope of this document.
 
-This can be safely disabled if you intend to compile code with the `@babel/plugin-proposal-async-generator-functions` Babel plugin, or `@babel/preset-env`.
+This can be safely disabled if you intend to compile code with the `@babel/plugin-transform-async-generator-functions` Babel plugin, or `@babel/preset-env`.

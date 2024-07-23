@@ -11,10 +11,10 @@ new RegExp("/(?<=a)b")
 These will not be allowed because they are not supported in the following browsers:
 
  - Edge < 79
- - Safari (any version at the time of writing)
- - Firefox (any version at the time of writing)
+ - Safari < 16.4
+ - Firefox < 78
  - Chrome < 62
 
 ## What is the Fix?
 
-You may be able to rewrite your experession using (Negative) Lookaheads, but if not then there is no solution for this, aside from pulling in a custom RegExp library.
+You may be able to rewrite your expression using (Negative) Lookaheads, but if not then there is no solution for this, aside from pulling in a custom RegExp library.

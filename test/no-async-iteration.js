@@ -1,15 +1,17 @@
-var rule = require('../lib/rules/no-async-iteration')
-var RuleTester = require('eslint').RuleTester
+'use strict';
 
-var ruleTester = new RuleTester({parserOptions: {ecmaVersion: 2018}})
+const rule = require('../lib/index').rules['no-async-iteration']
+const RuleTester = require('eslint').RuleTester
 
-ruleTester.run('no-async-generator', rule, {
+const ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2018}})
+
+ruleTester.run('no-async-iteration', rule, {
   valid: [
-    {code: 'async function foo() { for(const a of b) {} }'}, 
+    {code: 'async function foo() { for(const a of b) {} }'},
   ],
   invalid: [
     {
-      code: 'async function foo() { for await(const a of b) {} }', 
+      code: 'async function foo() { for await(const a of b) {} }',
       errors: [
         {
           message:

@@ -1,14 +1,15 @@
-var rule = require('../lib/rules/no-regexp-lookbehind')
-var RuleTester = require('eslint').RuleTester
+'use strict';
 
-var ruleTester = new RuleTester({parserOptions: {ecmaVersion: 2020}})
+const rule = require('../lib/index').rules['no-regexp-lookbehind']
+const RuleTester = require('eslint').RuleTester
+
+const ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2020}})
 
 ruleTester.run('no-regexp-lookbehind', rule, {
   valid: [
     {code: '/(?:a)b/'},
     {code: '/(?:a)b/g'},
     {code: '/(?<named_group_not_checked_here>)/'},
-    {code: 'RegExp("(?:a)b", "g")'},
     {code: 'RegExp("(?:a)b", "g")'},
     {code: 'RegExp("(?<named-group-not-checked-here>)")'},
   ],

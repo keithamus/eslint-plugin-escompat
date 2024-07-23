@@ -16,8 +16,8 @@ class Foo {
 These will not be allowed because they are not supported in the following browsers:
 
  - Edge < 79
- - Safari (any version at the time of writing)
- - Firefox (any version at the time of writing)
+ - Safari < 14.1
+ - Firefox < 90
  - Chrome < 74
 
 
@@ -39,4 +39,5 @@ class Foo {
 }
 ```
 
-This can be safely disabled if you intend to compile code with the `@babel/plugin-proposal-class-properties` Babel plugin.
+This can be safely disabled if you intend to compile code with the `@babel/plugin-transform-private-property-in-object` Babel plugin, or
+`@babel/preset-env`.
