@@ -167,6 +167,7 @@ for configuration. Here's some examples:
 - [no-regexp-lookbehind](./docs/no-regexp-lookbehind.md)
 - [no-regexp-named-group](./docs/no-regexp-named-group.md)
 - [no-regexp-s-flag](./docs/no-regexp-s-flag.md)
+- [no-regexp-v-flag](./docs/no-regexp-v-flag.md)
 - [no-top-level-await](./docs/no-top-level-await.md)
 
 ## Inspiration
