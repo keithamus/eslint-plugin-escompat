@@ -52,4 +52,4 @@ let a = obj.a, x = without(obj, 'a')
 
 You can also use Lodash's [`without`](https://lodash.com/docs/4.17.11#without) method, or Ramda's [`omit`](https://ramdajs.com/docs/#omit).
 
-This can be safely disabled if you intend to compile code with the `@babel/plugin-proposal-object-rest-spread` Babel plugin, or `@babel/preset-env`.
+This can be safely disabled if you intend to compile code with the `@babel/plugin-transform-object-rest-spread` Babel plugin, or `@babel/preset-env`.

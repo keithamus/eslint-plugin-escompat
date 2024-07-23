@@ -11,8 +11,8 @@ new RegExp("/(?<=a)b")
 These will not be allowed because they are not supported in the following browsers:
 
  - Edge < 79
- - Safari (any version at the time of writing)
- - Firefox (any version at the time of writing)
+ - Safari < 16.4
+ - Firefox < 78
  - Chrome < 62
 
 ## What is the Fix?

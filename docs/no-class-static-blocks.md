@@ -14,7 +14,7 @@ These will not be allowed because they are not supported in the following
 browsers:
 
 - Edge < 94
-- Safari > 0
+- Safari < 16.4
 - Firefox < 93
 - Chrome < 94
 
@@ -43,5 +43,5 @@ class Foo {
 ```
 
 This can be safely disabled if you intend to compile code with the
-`@babel/plugin-proposal-class-static-block` Babel plugin, or
+`@babel/plugin-transform-class-static-block` Babel plugin, or
 `@babel/preset-env`.

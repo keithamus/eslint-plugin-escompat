@@ -11,9 +11,9 @@ class Foo {
 These will not be allowed because they are not supported in the following browsers:
 
  - Edge < 79
- - Safari (any version at the time of writing)
+ - Safari < 16.0
  - Firefox < 69
- - Chrome < 74
+ - Chrome < 72
 
 
 ## What is the Fix?
@@ -36,4 +36,5 @@ class Foo {
 }
 ```
 
-This can be safely disabled if you intend to compile code with the `@babel/plugin-proposal-class-properties` Babel plugin.
+This can be safely disabled if you intend to compile code with the `@babel/plugin-transform-class-properties` Babel plugin, or
+`@babel/preset-env`.
