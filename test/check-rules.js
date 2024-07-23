@@ -1,12 +1,17 @@
 /* globals describe, it*/
+'use strict';
+
 const config = require('../lib/index')
 const fs = require('fs')
 const assert = require('assert')
 const path = require('path')
+const globals = require('globals')
 const docDir = './docs'
 
+globalThis.ESLINT_TESTING = true; // Flag for rule creation
+
 const RuleTester = require('eslint').RuleTester
-const ruleTester = new RuleTester({env: {es2020: true}, parserOptions: {sourceType: 'module'}})
+const ruleTester = new RuleTester({languageOptions: {globals: {...globals.es2020}, sourceType: 'module'}})
 
 function rulesFromDir(dir) {
   try {
@@ -135,7 +140,7 @@ describe('documentation', () => {
         }
       }
 
-      const rule = require(`../lib/rules/${doc}`)
+      const rule = require('../lib/index').rules[doc]
       ruleTester.run(doc, rule, rules)
     })
 

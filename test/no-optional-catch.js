@@ -1,8 +1,11 @@
-var rule = require('../lib/rules/no-optional-catch')
-var RuleTester = require('eslint').RuleTester
+'use strict';
 
-var ruleTesterBabel = new RuleTester({parser: require.resolve('@babel/eslint-parser')})
-var ruleTester = new RuleTester({parserOptions: {ecmaVersion: 2019}})
+const rule = require('../lib/index').rules['no-optional-catch']
+const RuleTester = require('eslint').RuleTester
+const babelEslintParser = require('@babel/eslint-parser');
+
+const ruleTesterBabel = new RuleTester({languageOptions: {parser: babelEslintParser}})
+const ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2019}})
 
 const tests = {
   valid: [
