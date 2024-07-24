@@ -3,9 +3,9 @@
 This prevents the use of the `v` flag in RegExps
 
 ```js
-/abc/v
+/[\p{Letter}]/v
 
-new RegExp('abc', 'v')
+new RegExp('[\\p{Letter}]', 'v')
 ```
 
 These will not be allowed because they are not supported in the following browsers:
