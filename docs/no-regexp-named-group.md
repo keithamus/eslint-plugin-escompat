@@ -5,7 +5,7 @@ This prevents the use of the RegExp named groups feature
 ```js
 /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/
 
-new RegExp('(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})')
+new RegExp('(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2})')
 ```
 
 These will not be allowed because they are not supported in the following browsers:
@@ -22,7 +22,7 @@ If readability is the main concern, using non-named groups with array-destructur
 
 ```js
 // With named:
-const {year,month,day} = '2020-01-01'.match(/(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/).groups
+const {year, month, day} = '2020-01-01'.match(/(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/).groups
 
 // Without named
 const [_, year, month, day] = '2020-01-01'.match(/(\d{4})-(\d{2})-(\d{2})/) || []

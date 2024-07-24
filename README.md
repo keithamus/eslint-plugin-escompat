@@ -164,6 +164,7 @@ for configuration. Here's some examples:
 - [no-private-class-fields](./docs/no-private-class-fields.md)
 - [no-public-instance-class-fields](./docs/no-public-instance-class-fields.md)
 - [no-public-static-class-fields](./docs/no-public-static-class-fields.md)
+- [no-regexp-duplicate-named-groups](./docs/no-regexp-duplicate-named-groups.md)
 - [no-regexp-lookbehind](./docs/no-regexp-lookbehind.md)
 - [no-regexp-named-group](./docs/no-regexp-named-group.md)
 - [no-regexp-s-flag](./docs/no-regexp-s-flag.md)
