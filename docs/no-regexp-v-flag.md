@@ -3,9 +3,9 @@
 This prevents the use of the `v` flag in RegExps
 
 ```js
-/abc/v
+/[\p{Letter}]/v
 
-new RegExp('abc', 'v')
+new RegExp('[\\p{Letter}]', 'v')
 ```
 
 These will not be allowed because they are not supported in the following browsers:
@@ -17,11 +17,11 @@ These will not be allowed because they are not supported in the following browse
 
 ## What is the Fix?
 
-If you are not using the features required by the `v` flag (set
-notations and properties of string), you can use the `u` flag.
+You can avoid using the `v` flag by expanding the sets to their unicode ranges:
 
 ```js
-let vFlag = /^[👍]$/u
+let vFlag = /[\p{ASCII}]/v;
+let noVFlag = /[\0-\x7F]/;
 ```
 
 This can be safely disabled if you intend to compile code with the `@babel/plugin-transform-unicode-sets-regex` Babel plugin, or `@babel/preset-env`.
