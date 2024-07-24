@@ -21,17 +21,17 @@ These will not be allowed because they are not supported in the following browse
 The `s` flag is relatively simple sugar for `[\0-\uFFFF]`, so you can simply opt to write the un-sugared syntax:
 
 ```js
-let dotAll = `/./s`
+let dotAll = /./s
 
-let dotAll = `/[\0-\uFFFF]/`
+let dotAll = /[\0-\uFFFF]/
 ```
 
 If you are using it in combination with the `u` flag then you may adjust the pattern:
 
 ```js
-let dotAll = `/./su`
+let dotAll = /./su
 
-let dotAll = `/[\0-\u{10FFFF}]/`
+let dotAll = /[\0-\u{10FFFF}]/
 ```
 
 This can be safely disabled if you intend to compile code with the `@babel/plugin-transform-dotall-regex` Babel plugin, or `@babel/preset-env`.
