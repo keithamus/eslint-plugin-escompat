@@ -9,6 +9,7 @@ ruleTester.run('no-hashbang-comment', rule, {
   valid: [
     {code: '// Regular comment'},
     {code: '/* Regular comment */'},
+    {code: 'noComment;'},
   ],
   invalid: [
     {
