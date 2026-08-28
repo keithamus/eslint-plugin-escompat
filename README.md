@@ -1,7 +1,7 @@
 # eslint-plugin-escompat
 
 This plugin will report eslint errors for code which - if left untranspiled -
-will not work in some browsers.
+will not work in some browsers or Node.js versions.
 
 This is useful if you intend to ship code without first using a transpiler, such
 as [Babel](https://babeljs.io).
@@ -114,7 +114,8 @@ or for `.eslintrc`:
 `eslint-plugin-escompat` uses the `browserslist` configuration in `package.json`
 
 If you have a browserslist, it is safe to enable all of these rules - as any that
-do not coincide with your chosen browsers will be turned off automatically.
+do not coincide with your chosen browsers or Node versions will be turned off
+automatically.
 
 See [browserslist/browserslist](https://github.com/browserslist/browserslist)
 for configuration. Here's some examples:
@@ -138,7 +139,7 @@ for configuration. Here's some examples:
 }
 ```
 
-:bulb: You can also define browsers in a
+:bulb: You can also define browsers and/or Node versions in a
 [separate browserslist file](https://github.com/browserslist/browserslist#config-file)
 
 ## Rules
