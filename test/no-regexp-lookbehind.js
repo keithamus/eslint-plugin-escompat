@@ -31,6 +31,14 @@ ruleTester.run('no-regexp-lookbehind', rule, {
       ]
     },
     {
+      code: 'new RegExp(`/(?<=a)b`)',
+      errors: [
+        {
+          message: 'RegExp lookbehinds are not supported in undefined'
+        }
+      ]
+    },
+    {
       code: '/(?<=a)b/g',
       errors: [
         {
