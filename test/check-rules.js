@@ -25,7 +25,7 @@ function* extractCodeblocks(lines) {
   let inCodeBlock = false
   let codeLines = []
   let startLine = 0
-  let endLine = 0
+  // let endLine = 0
   let lang = ''
   for (const i in lines) {
     const line = lines[i]
@@ -36,8 +36,8 @@ function* extractCodeblocks(lines) {
       inCodeBlock = true
       continue
     } else if (inCodeBlock && line.startsWith('```')) {
-      endLine = i
-      yield {code: codeLines, startLine, endLine, lang}
+      // endLine = i
+      yield {code: codeLines, startLine, lang} // , endLine
       inCodeBlock = false
       continue
     }
@@ -67,6 +67,52 @@ describe('smoke tests', () => {
     })
   }
 })
+
+describe('rule enablement logic (line 40)', () => {
+  it('returns empty object when not testing and no bad browsers exist', () => {
+    const originalTesting = globalThis.ESLINT_TESTING;
+    globalThis.ESLINT_TESTING = false;
+
+    const rule = config.rules['no-edge-destructure-bug'];
+    const browserslist = require('browserslist');
+    const originalFindConfig = browserslist.findConfig;
+
+    browserslist.findConfig = () => ({ defaults: 'edge 18' });
+
+    try {
+      const result = rule.create({
+        getFilename: () => '/fake/path/file.js'
+      });
+      assert.deepStrictEqual(result, {});
+    } finally {
+      globalThis.ESLINT_TESTING = originalTesting;
+      browserslist.findConfig = originalFindConfig;
+    }
+  });
+
+  it('returns rule definition when not testing but bad browsers exist (line 38)', () => {
+    const originalTesting = globalThis.ESLINT_TESTING;
+    globalThis.ESLINT_TESTING = false;
+
+    const rule = config.rules['no-edge-destructure-bug'];
+    const browserslist = require('browserslist');
+    const originalFindConfig = browserslist.findConfig;
+
+    browserslist.findConfig = () => ({ defaults: 'edge 16' });
+
+    try {
+      const result = rule.create({
+        getFilename: () => '/fake/path/file.js'
+      });
+      // the rule's create function returns an object (the AST visitors)
+      assert.strictEqual(typeof result, 'object');
+      assert.notDeepStrictEqual(result, {});
+    } finally {
+      globalThis.ESLINT_TESTING = originalTesting;
+      browserslist.findConfig = originalFindConfig;
+    }
+  });
+});
 
 describe('test coverage', () => {
   it('has tests for each rule and rules for each test', () => {

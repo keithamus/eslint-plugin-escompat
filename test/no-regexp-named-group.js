@@ -30,6 +30,14 @@ ruleTester.run('no-regexp-named-group', rule, {
       ]
     },
     {
+      code: 'new RegExp(`(?<name>)`)',
+      errors: [
+        {
+          message: 'RegExp named groups are not supported in undefined'
+        }
+      ]
+    },
+    {
       code: '/(?<$name>)/',
       errors: [
         {

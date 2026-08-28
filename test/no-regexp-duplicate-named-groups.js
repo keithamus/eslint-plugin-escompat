@@ -33,6 +33,14 @@ ruleTester.run('no-regexp-duplicate-named-groups', rule, {
       ]
     },
     {
+      code: 'new RegExp(`(?<name>a)|(?<name>b)`)',
+      errors: [
+        {
+          message: 'RegExp duplicate named groups are not supported in undefined'
+        }
+      ]
+    },
+    {
       code: '/(?<$name>a)|(?<$name>b)/',
       errors: [
         {
