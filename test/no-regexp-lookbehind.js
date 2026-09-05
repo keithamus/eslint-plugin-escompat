@@ -1,7 +1,10 @@
-'use strict';
+import { RuleTester } from "eslint"
 
-const rule = require('../lib/index').rules['no-regexp-lookbehind']
-const RuleTester = require('eslint').RuleTester
+import Rule from '../lib/index.js'
+
+const rule = /** @type {Required<import('eslint').ESLint.Plugin>} */ (
+  Rule
+).rules['no-regexp-lookbehind']
 
 const ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2020}})
 

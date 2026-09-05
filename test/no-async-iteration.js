@@ -1,7 +1,9 @@
-'use strict';
+import Rule from '../lib/index.js'
+import { RuleTester } from 'eslint'
 
-const rule = require('../lib/index').rules['no-async-iteration']
-const RuleTester = require('eslint').RuleTester
+const rule = /** @type {Required<import('eslint').ESLint.Plugin>} */ (
+  Rule
+).rules['no-async-iteration']
 
 const ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2018}})
 

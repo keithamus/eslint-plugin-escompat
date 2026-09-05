@@ -1,7 +1,15 @@
 {
   "name": "eslint-plugin-escompat",
   "version": "3.6.0",
+  "type": "module",
   "description": "",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./lib/index.js"
+    }
+  },
   "keywords": [],
   "repository": {
     "type": "git",
@@ -11,6 +19,7 @@
   "license": "MIT",
   "author": "Keith Cirkel (https://keithcirkel.co.uk/)",
   "files": [
+    "dist",
     "lib/*"
   ],
   "nyc": {
@@ -20,12 +29,15 @@
     "statements": 100,
     "branches": 100
   },
-  "main": "lib/index.js",
   "scripts": {
+    "tsc": "tsc",
+    "tsc-prod": "tsc -p tsconfig-prod.json",
+    "attw": "attw --pack . --profile node16 --profile esm-only",
     "lint": "eslint .",
     "test": "npm run lint && nyc mocha"
   },
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.5",
     "@babel/eslint-parser": "^8.0.1",
     "@babel/plugin-proposal-do-expressions": "^8.0.1",
     "@babel/plugin-proposal-function-bind": "^8.0.1",
@@ -33,8 +45,10 @@
     "@babel/preset-env": "^8.0.2",
     "@babel/preset-typescript": "^8.0.1",
     "@eslint/js": "^10.0.1",
-    "eslint": "^10.9.1",
-    "globals": "^17.11.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^26.4.1",
+    "eslint": "^10.10.0",
+    "globals": "^17.12.0",
     "mocha": "^12.0.0",
     "nyc": "^18.0.0"
   },
@@ -42,6 +56,6 @@
     "eslint": ">=9.6.0"
   },
   "dependencies": {
-    "browserslist": "^4.28.8"
+    "browserslist": "^4.28.9"
   }
 }

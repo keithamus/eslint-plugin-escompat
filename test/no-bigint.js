@@ -1,7 +1,10 @@
-'use strict';
+import Rule from '../lib/index.js'
 
-const rule = require('../lib/index').rules['no-bigint']
-const RuleTester = require('eslint').RuleTester
+import { RuleTester } from 'eslint'
+
+const rule = /** @type {Required<import('eslint').ESLint.Plugin>} */ (
+  Rule
+).rules['no-bigint']
 
 const ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2020}})
 
