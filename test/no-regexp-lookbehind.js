@@ -2,7 +2,9 @@ import { RuleTester } from "eslint"
 
 import Rule from '../lib/index.js'
 
-const rule = Rule.rules['no-regexp-lookbehind']
+const rule = /** @type {Required<import('eslint').ESLint.Plugin>} */ (
+  Rule
+).rules['no-regexp-lookbehind']
 
 const ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2020}})
 

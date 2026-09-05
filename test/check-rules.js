@@ -16,6 +16,9 @@ globalThis.ESLINT_TESTING = true; // Flag for rule creation
 
 const ruleTester = new RuleTester({languageOptions: {globals: {...globals.es2020}, sourceType: 'module'}})
 
+/**
+ * @param {string} dir
+ */
 function rulesFromDir(dir) {
   try {
     return fs.readdirSync(`./${dir}`).map(f => path.basename(f, path.extname(f)))
@@ -24,14 +27,17 @@ function rulesFromDir(dir) {
   }
 }
 
+/**
+ * @param {string[]} lines
+ */
 function* extractCodeblocks(lines) {
   let inCodeBlock = false
   let codeLines = []
+  /** @type {number} */
   let startLine = 0
   // let endLine = 0
   let lang = ''
-  for (const i in lines) {
-    const line = lines[i]
+  for (const [i, line] of lines.entries()) {
     if (!inCodeBlock && line.startsWith('```')) {
       lang = line.slice(3)
       startLine = i
@@ -63,7 +69,7 @@ describe('smoke tests', () => {
     describe(`${flavour} config`, () => {
       it('exports valid rules', () => {
         const exportedRules = new Set(Object.keys(config.rules))
-        const ceRules = Object.keys(config.configs[flavour].rules || []).filter(rule => rule.startsWith('escompat/'))
+        const ceRules = Object.keys(/** @type {{rules?: Record<string, unknown>}} */ (config.configs[flavour]).rules || []).filter(rule => rule.startsWith('escompat/'))
         const violations = ceRules.filter(rule => !exportedRules.has(rule.replace(/^escompat\//, '')))
         assert.deepStrictEqual(violations, [], 'All custom-elements/ rules should exist in lib/index.js#rules')
       })
@@ -80,12 +86,12 @@ describe('rule enablement logic (line 40)', () => {
     const browserslist = require('browserslist');
     const originalFindConfig = browserslist.findConfig;
 
-    browserslist.findConfig = () => ({ defaults: 'edge 18' });
+    browserslist.findConfig = () => ({ defaults: ['edge 18'] });
 
     try {
-      const result = rule.create({
+      const result = rule.create(/** @type {any} */ ({
         getFilename: () => '/fake/path/file.js'
-      });
+      }));
       assert.deepStrictEqual(result, {});
     } finally {
       globalThis.ESLINT_TESTING = originalTesting;
@@ -101,12 +107,12 @@ describe('rule enablement logic (line 40)', () => {
     const browserslist = require('browserslist');
     const originalFindConfig = browserslist.findConfig;
 
-    browserslist.findConfig = () => ({ defaults: 'edge 16' });
+    browserslist.findConfig = () => ({ defaults: ['edge 16'] });
 
     try {
-      const result = rule.create({
+      const result = rule.create(/** @type {any} */ ({
         getFilename: () => '/fake/path/file.js'
-      });
+      }));
       // the rule's create function returns an object (the AST visitors)
       assert.strictEqual(typeof result, 'object');
       assert.notDeepStrictEqual(result, {});
@@ -166,6 +172,12 @@ describe('documentation', () => {
     })
 
     it(`has working examples in ${doc}.md`, () => {
+      /**
+       * @type {{
+       *   valid: import('eslint').RuleTester.ValidTestCase[],
+       *   invalid: import('eslint').RuleTester.InvalidTestCase[]
+       * }}
+       */
       const rules = {valid: [], invalid: []}
       const lines = fs.readFileSync(`${docDir}/${doc}.md`, 'utf-8').split('\n')
 
@@ -189,7 +201,7 @@ describe('documentation', () => {
         }
       }
 
-      const rule = require('../lib/index.js').default.rules[doc]
+      const rule = config.rules[doc]
       ruleTester.run(doc, rule, rules)
     })
 

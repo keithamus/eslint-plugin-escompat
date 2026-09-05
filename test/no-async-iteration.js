@@ -1,7 +1,9 @@
 import Rule from '../lib/index.js'
 import { RuleTester } from 'eslint'
 
-const rule = Rule.rules['no-async-iteration']
+const rule = /** @type {Required<import('eslint').ESLint.Plugin>} */ (
+  Rule
+).rules['no-async-iteration']
 
 const ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2018}})
 
