@@ -163,6 +163,7 @@ for configuration. Here's some examples:
 - [no-optional-chaining](./docs/no-optional-chaining.md)
 - [no-pipeline-operator](./docs/no-pipeline-operator.md)
 - [no-private-class-fields](./docs/no-private-class-fields.md)
+- [no-private-in](./docs/no-private-in.md)
 - [no-public-instance-class-fields](./docs/no-public-instance-class-fields.md)
 - [no-public-static-class-fields](./docs/no-public-static-class-fields.md)
 - [no-regexp-duplicate-named-groups](./docs/no-regexp-duplicate-named-groups.md)
