@@ -1,7 +1,8 @@
-'use strict';
+import { RuleTester } from "eslint"
 
-const rule = require("../lib/index").rules["no-class-static-blocks"];
-const RuleTester = require("eslint").RuleTester;
+import Rule from "../lib/index.js"
+
+const rule = Rule.rules["no-class-static-blocks"];
 
 const ruleTester = new RuleTester({ languageOptions: { ecmaVersion: 2022 }});
 

@@ -1,6 +1,7 @@
 {
   "name": "eslint-plugin-escompat",
   "version": "3.6.0",
+  "type": "module",
   "description": "",
   "keywords": [],
   "repository": {
@@ -33,8 +34,8 @@
     "@babel/preset-env": "^8.0.2",
     "@babel/preset-typescript": "^8.0.1",
     "@eslint/js": "^10.0.1",
-    "eslint": "^10.9.1",
-    "globals": "^17.11.0",
+    "eslint": "^10.10.0",
+    "globals": "^17.12.0",
     "mocha": "^12.0.0",
     "nyc": "^18.0.0"
   },
@@ -42,6 +43,6 @@
     "eslint": ">=9.6.0"
   },
   "dependencies": {
-    "browserslist": "^4.28.8"
+    "browserslist": "^4.28.9"
   }
 }

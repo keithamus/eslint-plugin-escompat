@@ -1,7 +1,8 @@
-'use strict';
+import { RuleTester } from "eslint"
 
-const rule = require('../lib/index').rules['no-regexp-v-flag']
-const RuleTester = require('eslint').RuleTester
+import Rule from '../lib/index.js'
+
+const rule = Rule.rules['no-regexp-v-flag']
 
 const ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2024}})
 

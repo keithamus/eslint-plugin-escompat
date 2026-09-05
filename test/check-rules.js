@@ -1,16 +1,19 @@
-/* globals describe, it*/
-'use strict';
+import fs from 'node:fs'
+import assert from 'node:assert'
+import path from 'node:path'
+import { createRequire } from "node:module";
 
-const config = require('../lib/index')
-const fs = require('fs')
-const assert = require('assert')
-const path = require('path')
-const globals = require('globals')
+import globals from 'globals'
+import { RuleTester } from 'eslint'
+
+import config from '../lib/index.js'
+
+const require = createRequire(import.meta.url);
+
 const docDir = './docs'
 
 globalThis.ESLINT_TESTING = true; // Flag for rule creation
 
-const RuleTester = require('eslint').RuleTester
 const ruleTester = new RuleTester({languageOptions: {globals: {...globals.es2020}, sourceType: 'module'}})
 
 function rulesFromDir(dir) {
@@ -186,7 +189,7 @@ describe('documentation', () => {
         }
       }
 
-      const rule = require('../lib/index').rules[doc]
+      const rule = require('../lib/index.js').default.rules[doc]
       ruleTester.run(doc, rule, rules)
     })
 

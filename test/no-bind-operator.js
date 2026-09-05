@@ -1,8 +1,9 @@
-'use strict';
+import { RuleTester } from 'eslint'
+import babelEslintParser from '@babel/eslint-parser'
 
-const rule = require('../lib/index').rules['no-bind-operator']
-const RuleTester = require('eslint').RuleTester
-const babelEslintParser = require('@babel/eslint-parser');
+import Rule from '../lib/index.js'
+
+const rule = Rule.rules['no-bind-operator']
 
 const ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2018, parser: babelEslintParser}})
 
