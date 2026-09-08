@@ -6,17 +6,26 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [22.x, 24.x]
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js 22.x
-      uses: actions/setup-node@v3
+    - uses: actions/checkout@v4
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
       with:
-        node-version: 22.x
-    - name: npm install, build, and test
-      run: |
-        npm it
+        node-version: ${{ matrix.node-version }}
+        cache: npm
+    - run: npm ci
+    - run: npm run tsc
+    - run: npm run tsc-prod
+    - run: npm test
+    - run: npm run attw
       env:
         CI: true
