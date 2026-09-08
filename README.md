@@ -146,6 +146,7 @@ for configuration. Here's some examples:
 
 - [no-async-generator](./docs/no-async-generator.md)
 - [no-async-iteration](./docs/no-async-iteration.md)
+- [no-bigint-function](./docs/no-bigint-function.md)
 - [no-bigint](./docs/no-bigint.md)
 - [no-bind-operator](./docs/no-bind-operator.md)
 - [no-class-static-blocks](./docs/no-class-static-blocks.md)
