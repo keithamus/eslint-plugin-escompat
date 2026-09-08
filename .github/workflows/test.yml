@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -29,3 +29,9 @@ jobs:
     - run: npm run attw
       env:
         CI: true
+
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "all matrix jobs passed"
