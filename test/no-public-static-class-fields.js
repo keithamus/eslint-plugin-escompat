@@ -3,9 +3,7 @@ import babelEslintParser from "@babel/eslint-parser"
 
 import Rule from '../lib/index.js'
 
-const rule = /** @type {Required<import('eslint').ESLint.Plugin>} */ (
-  Rule
-).rules['no-public-static-class-fields']
+const rule = Rule.rules['no-public-static-class-fields']
 
 const ruleTesterBabel = new RuleTester({languageOptions: {parser: babelEslintParser}})
 const ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2022}})

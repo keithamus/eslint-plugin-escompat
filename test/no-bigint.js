@@ -2,9 +2,7 @@ import Rule from '../lib/index.js'
 
 import { RuleTester } from 'eslint'
 
-const rule = /** @type {Required<import('eslint').ESLint.Plugin>} */ (
-  Rule
-).rules['no-bigint']
+const rule = Rule.rules['no-bigint']
 
 const ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2020}})
 

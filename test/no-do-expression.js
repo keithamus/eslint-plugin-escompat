@@ -3,9 +3,7 @@ import babelEslintParser from '@babel/eslint-parser'
 
 import Rule from '../lib/index.js'
 
-const rule = /** @type {Required<import('eslint').ESLint.Plugin>} */ (
-  Rule
-).rules['no-do-expression']
+const rule = Rule.rules['no-do-expression']
 
 const ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2018, parser: babelEslintParser}})
 

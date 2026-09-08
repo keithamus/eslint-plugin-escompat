@@ -2,9 +2,7 @@ import { RuleTester } from "eslint"
 
 import Rule from '../lib/index.js'
 
-const rule = /** @type {Required<import('eslint').ESLint.Plugin>} */ (
-  Rule
-).rules['no-exponentiation-operator']
+const rule = Rule.rules['no-exponentiation-operator']
 
 const ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2018}})
 

@@ -2,9 +2,7 @@ import { RuleTester } from "eslint"
 
 import Rule from '../lib/index.js'
 
-const rule = /** @type {Required<import('eslint').ESLint.Plugin>} */ (
-  Rule
-).rules['no-logical-assignment-operator']
+const rule = Rule.rules['no-logical-assignment-operator']
 
 const ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2021}})
 

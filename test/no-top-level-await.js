@@ -2,9 +2,7 @@ import { RuleTester } from "eslint"
 
 import Rule from '../lib/index.js'
 
-const rule = /** @type {Required<import('eslint').ESLint.Plugin>} */ (
-  Rule
-).rules['no-top-level-await']
+const rule = Rule.rules['no-top-level-await']
 
 const ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2022}})
 

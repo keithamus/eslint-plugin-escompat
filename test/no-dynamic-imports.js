@@ -3,9 +3,7 @@ import babelEslintParser from "@babel/eslint-parser"
 
 import Rule from '../lib/index.js'
 
-const rule = /** @type {Required<import('eslint').ESLint.Plugin>} */ (
-  Rule
-).rules['no-dynamic-imports']
+const rule = Rule.rules['no-dynamic-imports']
 
 const ruleTesterBabel = new RuleTester({ languageOptions: {parser: babelEslintParser} })
 const ruleTester = new RuleTester({languageOptions: {sourceType: 'module', ecmaVersion: 2020}})
